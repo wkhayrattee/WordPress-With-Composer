@@ -1,0 +1,38 @@
+{
+  "name": "sevenphp/wordpresswithcomposer",
+  "description": "This is a base setup for using wordpress with composer & git workflow. See the readme of usage.",
+  "authors": [
+    {
+      "name": "Wasseem Khayrattee",
+      "email": "git@7php.com",
+      "homepage": "http://7php.com/"
+    }
+  ],
+  "type": "project",
+  "config": {
+    "vendor-dir": "./vendor"
+  },
+  "extra": {
+    "wordpress-install-dir": "www/public/wp",
+    "installer-paths": {
+      "www/public/wp-content/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "www/public/wp-content/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
+    }
+  },
+  "require": {
+    "johnpbloch/wordpress": ">=4.6.1",
+    "wpackagist-theme/twentyfifteen": ">=1.6",
+    "wpackagist-plugin/akismet": ">=3.2",
+    "composer/installers": "~1.0"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org/"
+    }
+  ]
+}
