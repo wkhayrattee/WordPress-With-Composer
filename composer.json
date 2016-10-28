@@ -10,7 +10,7 @@
   ],
   "type": "project",
   "config": {
-    "vendor-dir": "./vendor"
+    "vendor-dir": "www/vendor"
   },
   "extra": {
     "wordpress-install-dir": "www/public/wp",

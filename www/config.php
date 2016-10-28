@@ -86,7 +86,7 @@ define('WP_DEBUG', false);
 define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/public/wp-content' );
 
 //Add Composer Autoloader
-require dirname(__DIR__) . '/' . 'vendor/autoload.php';
+require __DIR__ . '/' . 'vendor/autoload.php';
 
 
 
