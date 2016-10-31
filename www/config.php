@@ -18,9 +18,12 @@
  * @package WordPress
  */
 
+//TODO: If this does not work for you, put it manually
+define('SITE_URL' , $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']);
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'testwp');
+define('DB_NAME', 'demo1');
 
 /** MySQL database username */
 define('DB_USER', 'root');
@@ -67,8 +70,16 @@ $table_prefix  = 'wpshop_';
 
 /*** START CUSTOM CHANGES ***/
 
+/*
+ * This is here, if needed
+ * DESC: overrides the wp_options table value for home/site_url but does not change it permanently - ideal when moving across server ENV
+ */
+//define( 'WP_SITEURL', 'http://mywordpress.com/wp/' );
+define( 'WP_HOME', SITE_URL ); ///TODO: CHANGE THIS TO YOUR SITE
+
 // Change placement of wp-content
 define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/public/wp-content' );
+define('WP_CONTENT_URL', SITE_URL . '/wp-content');
 
 define( 'FS_CHMOD_FILE', 0644 );
 define( 'FS_CHMOD_DIR', 0755 );
@@ -95,13 +106,6 @@ if (file_exists(__DIR__ . '/env/' . WP_ENV . '.php')) {
 } else {
     die('there was an error finding an ENV file');
 }
-
-/*
- * This is here, if needed
- * DESC: overrides the wp_options table value for home/site_url but does not change it permanently - ideal when moving across server ENV
- */
-//define( 'WP_SITEURL', 'http://mywordpress.com/' );
-//define( 'WP_HOME', 'http://mywordpress.com/' );
 
 /**
  * A convenience function to output values of Variables and/or Arrays in a more readable manner
