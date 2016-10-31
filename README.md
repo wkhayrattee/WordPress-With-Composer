@@ -40,8 +40,7 @@ TODO: Blog posts
 
 ### TODO
 
-- further decompose the config.php to include dev.config.php, live.config.php ..etc
-- Probably move folder "uploads" at in folder "public" and renaming it as "assets/uploads"
+- Probably move folder "uploads" as well in folder "public" and renaming it as "assets/uploads"
 
 
 ### CHANGELOG
