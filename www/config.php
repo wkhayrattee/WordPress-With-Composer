@@ -65,30 +65,73 @@ define('NONCE_SALT',       'OUD}Z_QQ!]L9^~$$@99LiME.D6MQn61#AbjjBG18Aq|A8y`*,`5 
  */
 $table_prefix  = 'wpshop_';
 
-/**
- * For developers: WordPress debugging mode.
- *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
- *
- * For information on other constants that can be used for debugging,
- * visit the Codex.
- *
- * @link https://codex.wordpress.org/Debugging_in_WordPress
- */
-define('WP_DEBUG', false);
-
-
 /*** START CUSTOM CHANGES ***/
 
 // Change placement of wp-content
 define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/public/wp-content' );
 
+define( 'FS_CHMOD_FILE', 0644 );
+define( 'FS_CHMOD_DIR', 0755 );
+
 //Add Composer Autoloader
 require __DIR__ . '/' . 'vendor/autoload.php';
 
+//load ENV
+switch (true) {
+    case strstr($_SERVER['HTTP_HOST'], ".local"):
+    case strstr($_SERVER['HTTP_HOST'], ".dev"):
+        define('WP_ENV', 'dev');
+        define('IS_DEBUG_ENABLED', true);
+//        define('SITE_DOMAIN', 'domain.local');
+        break;
+    default:
+        define('WP_ENV', 'prods');
+        define('IS_DEBUG_ENABLED', false);
+//        define('SITE_DOMAIN', 'domain.com');
+        break;
+}
+if (file_exists(__DIR__ . '/env/' . WP_ENV . '.php')) {
+    require_once __DIR__ . '/env/' . WP_ENV . '.php';
+} else {
+    die('there was an error finding an ENV file');
+}
 
+/*
+ * This is here, if needed
+ * DESC: overrides the wp_options table value for home/site_url but does not change it permanently - ideal when moving across server ENV
+ */
+//define( 'WP_SITEURL', 'http://mywordpress.com/' );
+//define( 'WP_HOME', 'http://mywordpress.com/' );
+
+/**
+ * A convenience function to output values of Variables and/or Arrays in a more readable manner
+ *
+ * @param $array
+ * @param bool $die
+ * @param bool $print
+ * @return string
+ */
+function p($array, $print = true, $die = false)
+{
+    $result = '<pre>';
+    $result .= print_r($array, true);
+    $result .= '</pre><br/>';
+    if ($print) {
+        echo $result;
+        if ($die) {
+            die;
+        }
+    }
+    return $result;
+}
+
+/**
+ * @param $array
+ */
+function d($array, $print = true)
+{
+    p($array, $print, true);
+}
 
 /********************************************* That's all, stop editing! Happy blogging. *********************************************/
 
