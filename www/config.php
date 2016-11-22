@@ -11,15 +11,14 @@
  * * MySQL settings
  * * Secret keys
  * * Database table prefix
+ * * Modifying default path of wp-content (new)
  * * ABSPATH
+ * * Adding some custom handy functions
  *
  * @link https://codex.wordpress.org/Editing_wp-config.php
  *
  * @package WordPress
  */
-
-//TODO: If this does not work for you, put it manually
-define('SITE_URL' , $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']);
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
@@ -69,6 +68,9 @@ define('NONCE_SALT',       'OUD}Z_QQ!]L9^~$$@99LiME.D6MQn61#AbjjBG18Aq|A8y`*,`5 
 $table_prefix  = 'wpshop_';
 
 /*** START CUSTOM CHANGES ***/
+
+//TODO: If this does not work for you, put it manually
+define('SITE_URL' , $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']);
 
 /*
  * This is here, if needed
@@ -141,5 +143,4 @@ function d($array, $print = true)
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
-
+    define('ABSPATH', dirname(__FILE__) . '/');
