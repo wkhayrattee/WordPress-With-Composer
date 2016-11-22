@@ -98,7 +98,7 @@ switch (true) {
 //        define('SITE_DOMAIN', 'domain.local');
         break;
     default:
-        define('WP_ENV', 'prods');
+        define('WP_ENV', 'prod');
         define('IS_DEBUG_ENABLED', false);
 //        define('SITE_DOMAIN', 'domain.com');
         break;
