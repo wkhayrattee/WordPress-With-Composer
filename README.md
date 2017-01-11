@@ -13,13 +13,13 @@ $ composer create-project sevenphp/wordpresswithcomposer your_main_folder --pref
 
 ### Intro
 
-This is not a "project", but more of an attempt to adjust the structure of Wordpress for PHP developers to be able to add & use [Composer](https://getcomposer.org/) and [GIT](https://git-scm.com/) in their workflow. It's highly inspired from [“Rarst”](http://composer.rarst.net/).
+This is not a "project", but more of an attempt to adjust the structure of Wordpress for PHP developers to be able to add & use [Composer](https://getcomposer.org/) and [GIT](https://git-scm.com/) in their workflow.
 
-I'm a PHP developer and like to stay current. I had to embark into dev-ing with Wordpress. While the code is not 5star, Wordpress in the philosophy amazing. Think about it, it's the only project that has not make it's user suffer from upgrading. Anyway, so I wanted to be able to use GIT & a composer approach to my workflow and hence came up with this.
+I'm a PHP developer and like to stay current. I had to embark into DEV-ing with Wordpress. In so-doing, I now feel differently positive about coding with Wordpress as well, although I have been using wordpress since 2007 like crazy at a functional level for online purposes (like blogging..etc). While the code is not 5 star, Wordpress in the philosophy is indeed amazing. **Think about it**, it's the _only project_ that has not (never?) made its user-base suffer from upgrading. It is always highly easy to upgrade. That, in itself is incredible! Anyway, so I wanted to be able to use GIT & a composer approach to my workflow and hence came up with this.
 
-It's not the perfect workflow, so I would love to hear from you as well.
+It's not (yet) the perfect workflow, so I would love to hear from you as well.
 
-NOTE: I know & have seen roots.io, but it's goes way too much far in the modifying the structure of wordpress, it's too risky of an approach.
+NOTE: I know & have seen roots.io, but it goes way too far in their approach - modifying the structure of wordpress, it's too risky of an approach. It's kinda overdoing it. (No offence, but that's how I feel)
 
 ### Objectives
 - Incorporate composer & git workflow into my daily wordpress dev
@@ -27,7 +27,7 @@ NOTE: I know & have seen roots.io, but it's goes way too much far in the modifyi
 
 ### CREDIT
 
-My objectives have been met THANKS TO & would not have been possible without the AWESOME Andrey Savchenko aka [“Rarst”](http://composer.rarst.net/)
+While the motivation comes from my eagerness to code that way, I have to mention and give credit to the amazing [“Rarst”](http://composer.rarst.net/).
 He is a driving force in the instilling the composer spirit with his longstanding initiatives. see [http://composer.rarst.net/]()http://composer.rarst.net/)
 
 
@@ -40,7 +40,7 @@ TODO: Blog posts
 
 ### TODO
 
-- Probably move folder "uploads" as well in folder "public" and renaming it as "assets/uploads"
+- Move folder "uploads" as well in folder "public" and renaming it as "assets/uploads". Then symlink it.
 
 
 ### CHANGELOG
