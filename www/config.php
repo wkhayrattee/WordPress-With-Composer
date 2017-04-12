@@ -21,17 +21,7 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'demo1');
-
-/** MySQL database username */
-define('DB_USER', 'root');
-
-/** MySQL database password */
-define('DB_PASSWORD', 'password');
-
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
+/** Database credentials in env files - see down below */
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -92,6 +82,7 @@ require __DIR__ . '/' . 'vendor/autoload.php';
 //load ENV
 switch (true) {
     case strstr($_SERVER['HTTP_HOST'], ".local"):
+    case strstr($_SERVER['HTTP_HOST'], "dev."):
     case strstr($_SERVER['HTTP_HOST'], ".dev"):
         define('WP_ENV', 'dev');
         define('IS_DEBUG_ENABLED', true);
@@ -144,3 +135,4 @@ function d($array, $print = true)
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
     define('ABSPATH', dirname(__FILE__) . '/');
+
