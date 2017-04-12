@@ -4,8 +4,11 @@ Using Wordpress With Composer & GIT workflow
 ### How To Use
 
 ```php
-$ composer create-project sevenphp/wordpresswithcomposer your_main_folder --prefer-source
+$ composer create-project sevenphp/wordpresswithcomposer your_main_folder --prefer-dist
 ```
+
+> NOTE: if on DEV environment, omit the **--prefer-dist**
+
 
 ==> Then point your webserver to: path/to/your_main_folder/www/public
 
