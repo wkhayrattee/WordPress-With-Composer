@@ -12,7 +12,15 @@
   ],
   "type": "project",
   "config": {
-    "vendor-dir": "www/vendor"
+    "vendor-dir": "www/vendor",
+    "platform": {
+      "php": "7.0"
+    },
+    "preferred-install": {
+      "sevenphp/*": "source",
+      "*": "dist"
+    },
+    "sort-packages": true
   },
   "extra": {
     "wordpress-install-dir": "www/public/wp",
@@ -30,6 +38,9 @@
     "wpackagist-theme/twentyfifteen": "^1",
     "wpackagist-plugin/akismet": "^3",
     "composer/installers": "~1.0"
+  },
+  "require-dev": {
+    "wpackagist-plugin/query-monitor": "^2"
   },
   "repositories": [
     {
