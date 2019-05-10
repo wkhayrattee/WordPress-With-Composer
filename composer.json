@@ -16,7 +16,7 @@
     "optimize-autoloader": true,
     "sort-packages": true,
     "platform": {
-      "php": ">=7.0"
+      "php": "7.1.29"
     },
     "preferred-install": {
       "sevenphp/*": "source",
