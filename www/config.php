@@ -1,25 +1,4 @@
 <?php
-/**
- * The base configuration for WordPress
- *
- * The wp-config.php creation script uses this file during the
- * installation. You don't have to use the web site, you can
- * copy this file to "wp-config.php" and fill in the values.
- *
- * This file contains the following configurations:
- *
- * * MySQL settings
- * * Secret keys
- * * Database table prefix
- * * Modifying default path of wp-content (new)
- * * ABSPATH
- * * Adding some custom handy functions
- *
- * @link https://codex.wordpress.org/Editing_wp-config.php
- *
- * @package WordPress
- */
-
 define('_ROOT_FOLDER_', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 define('ENV_FOLDER',    __DIR__ . DIRECTORY_SEPARATOR . 'env' . DIRECTORY_SEPARATOR);
 
@@ -27,7 +6,7 @@ define('ENV_FOLDER',    __DIR__ . DIRECTORY_SEPARATOR . 'env' . DIRECTORY_SEPARA
 require __DIR__ . '/' . 'vendor/autoload.php';
 
 //load .env
-if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && file_exists( ENV_FOLDER . '/.env' ) ) {
+if (file_exists( ENV_FOLDER . '/.env')) {
     $dotenv = Dotenv\Dotenv::create(ENV_FOLDER);
     $dotenv->load();
     $dotenv->required( array(
