@@ -7,20 +7,21 @@
     {
       "name": "Wasseem Khayrattee",
       "email": "git@7php.com",
-      "homepage": "http://7php.com/"
+      "homepage": "https://7php.com/"
     }
   ],
   "type": "project",
   "config": {
     "vendor-dir": "www/vendor",
+    "optimize-autoloader": true,
+    "sort-packages": true,
     "platform": {
-      "php": "7.0"
+      "php": ">=7.0"
     },
     "preferred-install": {
       "sevenphp/*": "source",
       "*": "dist"
-    },
-    "sort-packages": true
+    }
   },
   "extra": {
     "wordpress-install-dir": "www/public/wp",
@@ -34,13 +35,17 @@
     }
   },
   "require": {
-    "johnpbloch/wordpress": "^4.7",
-    "wpackagist-theme/twentyfifteen": "^1",
-    "wpackagist-plugin/akismet": "^3",
-    "composer/installers": "~1.0"
+    "vlucas/phpdotenv": "3.3.3",
+    "composer/installers": "1.6.0",
+    "johnpbloch/wordpress": "5.2.0",
+    "wpackagist-theme/twentyfifteen": "2.5",
+    "wpackagist-plugin/akismet": "4.1.1"
   },
   "require-dev": {
-    "wpackagist-plugin/query-monitor": "^2"
+    "wpackagist-plugin/query-monitor": "3.3.4",
+    "roave/security-advisories": "dev-master",
+    "dealerdirect/phpcodesniffer-composer-installer": "*",
+    "wp-coding-standards/wpcs": "*"
   },
   "repositories": [
     {

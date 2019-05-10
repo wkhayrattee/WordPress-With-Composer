@@ -20,85 +20,91 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** Database credentials in env files - see down below */
-
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
-
-/** The Database Collate type. Don't change this if in doubt. */
-define('DB_COLLATE', '');
-
-/**#@+
- * Authentication Unique Keys and Salts.
- *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
- *
- * @since 2.6.0
- */
-define('AUTH_KEY',         '*[ciHD@JA2>`mUSKn&apaS035:-Y[U%~wh &ujg0qSM=-Je+k2/o$1I~y{z9B[kb');
-define('SECURE_AUTH_KEY',  'Ah)WB@Q8`,3{Bmj{ecV._VYo4#OK1A$|r+em?^?o3.-q=j]+R~Vzs>v=0zMgaox^');
-define('LOGGED_IN_KEY',    '+1jU]X4H|nA#--F@?vNPT0?qspo`8GAOWh/27AvuC7+%F!ni@3tr`(!(gF-na)]G');
-define('NONCE_KEY',        '[r@{e>ttV<._Y6G;XXPX(at${2[(2Q%(mKCk|~|>,<idY!My<*ghGtb=[uKoMPbW');
-define('AUTH_SALT',        'rCWU,`4~pR[Sn ;$yB_:v}O283wDL=.o.|U8csg:{BVot*o7L85[4a>v0%`.bK(x');
-define('SECURE_AUTH_SALT', '&UC7`-upD`p_X+e+,@2q|+& MN|$&NhpVn>Nv6Eszo_-y5;;law(U{Rmr1)g0i,A');
-define('LOGGED_IN_SALT',   ']K>KK#xX?*%1b9|X_X>V-Fx?-E!]d!fB~-;=-7Gs.jh<2fE3p-ZT|M+^,N@3q~{B');
-define('NONCE_SALT',       'OUD}Z_QQ!]L9^~$$@99LiME.D6MQn61#AbjjBG18Aq|A8y`*,`5 trgVvOlOTO73');
-
-/**#@-*/
-
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each
- * a unique prefix. Only numbers, letters, and underscores please!
- */
-$table_prefix  = 'wpshop_';
-
-/*** START CUSTOM CHANGES ***/
-
-//TODO: If this does not work for you, put it manually
-define('SITE_URL' , $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST']);
-
-/*
- * This is here, if needed
- * DESC: overrides the wp_options table value for home/site_url but does not change it permanently - ideal when moving across server ENV
- */
-//define( 'WP_SITEURL', 'http://mywordpress.com/wp/' );
-define( 'WP_HOME', SITE_URL ); ///TODO: CHANGE THIS TO YOUR SITE
-
-// Change placement of wp-content
-define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/public/wp-content' );
-define('WP_CONTENT_URL', SITE_URL . '/wp-content');
-
-define( 'FS_CHMOD_FILE', 0644 );
-define( 'FS_CHMOD_DIR', 0755 );
+define('_ROOT_FOLDER_', dirname(__FILE__) . DIRECTORY_SEPARATOR);
+define('ENV_FOLDER',    __DIR__ . DIRECTORY_SEPARATOR . 'env' . DIRECTORY_SEPARATOR);
 
 //Add Composer Autoloader
 require __DIR__ . '/' . 'vendor/autoload.php';
 
-//load ENV
+//load .env
+if ( ! isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && file_exists( ENV_FOLDER . '/.env' ) ) {
+    $dotenv = Dotenv\Dotenv::create(ENV_FOLDER);
+    $dotenv->load();
+    $dotenv->required( array(
+        'DB_NAME',
+        'DB_USER',
+        'DB_HOST',
+        'DB_PREFIX'
+    ) )->notEmpty();
+}
+
+//load helper ENV files to prevent repeating code
 switch (true) {
     case strstr($_SERVER['HTTP_HOST'], ".local"):
-    case strstr($_SERVER['HTTP_HOST'], "dev."):
-    case strstr($_SERVER['HTTP_HOST'], ".dev"):
+    case strstr($_SERVER['HTTP_HOST'], "dev.")  :
+    case strstr($_SERVER['HTTP_HOST'], ".dev")  :
+    case strstr($_SERVER['HTTP_HOST'], "pre.")  :
+    case strstr($_SERVER['HTTP_HOST'], "dev-")  :
+    case strstr($_SERVER['HTTP_HOST'], "test-") :
         define('WP_ENV', 'dev');
         define('IS_DEBUG_ENABLED', true);
-//        define('SITE_DOMAIN', 'domain.local');
         break;
     default:
         define('WP_ENV', 'prod');
         define('IS_DEBUG_ENABLED', false);
-//        define('SITE_DOMAIN', 'domain.com');
         break;
 }
-if (file_exists(__DIR__ . '/env/' . WP_ENV . '.php')) {
-    require_once __DIR__ . '/env/' . WP_ENV . '.php';
+if (file_exists(ENV_FOLDER . WP_ENV . '.php')) {
+    require_once ENV_FOLDER . WP_ENV . '.php';
 } else {
     die('there was an error finding an ENV file');
 }
+
+/**
+ * Authentication Unique Keys and Salts.
+ *
+ * TODO: Change in env/.env file
+ *       Generate from here https://api.wordpress.org/secret-key/1.1/salt/
+ */
+define('AUTH_KEY',         $_ENV['AUTH_KEY']);
+define('SECURE_AUTH_KEY',  $_ENV['SECURE_AUTH_KEY']);
+define('LOGGED_IN_KEY',    $_ENV['LOGGED_IN_KEY']);
+define('NONCE_KEY',        $_ENV['NONCE_KEY']);
+define('AUTH_SALT',        $_ENV['AUTH_SALT']);
+define('SECURE_AUTH_SALT', $_ENV['SECURE_AUTH_SALT']);
+define('LOGGED_IN_SALT',   $_ENV['LOGGED_IN_SALT']);
+define('NONCE_SALT',       $_ENV['NONCE_SALT']);
+
+/**
+ * Database credentials
+ */
+define('DB_NAME',       $_ENV['DB_NAME']); //TODO: change in env/.env
+define('DB_USER',       $_ENV['DB_USER']); //TODO: change in env/.env
+define('DB_PASSWORD',   $_ENV['DB_PASSWORD']); //TODO: change in env/.env
+$table_prefix =         $_ENV['DB_PASSWORD']; //TODO: change in env/.env
+
+/**
+ * Whether or not we are dealing with HTTPS
+ * Add default defines to handle internal URL smoothly
+ */
+$http_scheme = 'http';
+if (isset($_SERVER['HTTP_USER_AGENT_HTTPS']) && $_SERVER['HTTP_USER_AGENT_HTTPS'] == 'ON') {
+    $http_scheme        = 'https';
+    $_SERVER['HTTPS']   = 'on';
+    define( 'FORCE_SSL_LOGIN', true );
+    define( 'FORCE_SSL_ADMIN', true );
+}
+define('SITE_URL',   $http_scheme . '://' . $_SERVER['HTTP_HOST']); //TODO: If this does not work for you, put it manually
+define('WP_HOME',    SITE_URL);
+define('WP_SITEURL', SITE_URL . '/wp/');
+
+
+// Change placement of wp-content
+define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/public/wp-content' );
+define('WP_CONTENT_URL',  SITE_URL . '/wp-content');
+
+define( 'FS_CHMOD_FILE', 0644 );
+define( 'FS_CHMOD_DIR',  0755 );
 
 /**
  * A convenience function to output values of Variables and/or Arrays in a more readable manner
@@ -108,7 +114,7 @@ if (file_exists(__DIR__ . '/env/' . WP_ENV . '.php')) {
  * @param bool $print
  * @return string
  */
-function p($array, $print = true, $die = false)
+function pp($array, $print = true, $die = false) //print or echo
 {
     $result = '<pre>';
     $result .= print_r($array, true);
@@ -125,7 +131,7 @@ function p($array, $print = true, $die = false)
 /**
  * @param $array
  */
-function d($array, $print = true)
+function ppd($array, $print = true) //print and die
 {
     p($array, $print, true);
 }

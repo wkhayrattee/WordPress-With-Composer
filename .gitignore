@@ -5,4 +5,9 @@ composer.lock
 www/public/wp-content/plugins
 www/public/wp-content/themes
 www/public/wp-content/uploads
+www/public/wp-content/updraft
+www/public/wp-content/upgrade
+www/public/wp-content/languages
 www/public/wp
+www/public/.well-known/
+www/env/.env
