@@ -9,12 +9,16 @@ require __DIR__ . '/' . 'vendor/autoload.php';
 if (file_exists( ENV_FOLDER . '/.env')) {
     $dotenv = Dotenv\Dotenv::create(ENV_FOLDER);
     $dotenv->load();
-    $dotenv->required( array(
-        'DB_NAME',
-        'DB_USER',
-        'DB_HOST',
-        'DB_PREFIX'
-    ) )->notEmpty();
+    try {
+        $dotenv->required(array(
+            'DB_NAME',
+            'DB_USER',
+            'DB_PREFIX'
+        ))->notEmpty();
+    } catch (\Dotenv\Exception\ValidationException $error) {
+        die($error->getMessage());
+        //if we don't handle it, we end up with server error 500, which is extra steps to inspect server log
+    }
 } else {
     die('there was an error finding the .env file');
 }
