@@ -9,6 +9,7 @@ ini_set('error_log', _ROOT_FOLDER_ . 'logs/wp_php_error.log');
 define('WP_POST_REVISIONS', false);
 define('AUTOSAVE_INTERVAL', 300); //interval at 5mins
 
+define('FS_METHOD',         'direct');
 define('SAVEQUERIES',       true);
 define('WP_DEBUG',          true); //displays WordPress errors on the screen
 define('WP_DEBUG_LOG',      true);
