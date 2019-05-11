@@ -119,7 +119,7 @@ function pp($array, $print = true, $die = false) //print or echo
  */
 function ppd($array, $print = true) //print and die
 {
-    p($array, $print, true);
+    pp($array, $print, true);
 }
 
 /********************************************* That's all, stop editing! Happy blogging. *********************************************/
