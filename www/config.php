@@ -74,7 +74,7 @@ $table_prefix =         $_ENV['DB_PREFIX']; //TODO: change in env/.env
  * Add default defines to handle internal URL smoothly
  */
 $http_scheme = 'http';
-if (isset($_SERVER['HTTP_USER_AGENT_HTTPS']) && $_SERVER['HTTP_USER_AGENT_HTTPS'] == 'ON') {
+if ( (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && (strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) == 'https')) || (isset($_SERVER['HTTP_USER_AGENT_HTTPS']) && $_SERVER['HTTP_USER_AGENT_HTTPS'] == 'ON')) {
     $http_scheme        = 'https';
     $_SERVER['HTTPS']   = 'on';
     define( 'FORCE_SSL_LOGIN', true );
