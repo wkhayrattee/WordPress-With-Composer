@@ -74,7 +74,7 @@ $table_prefix =         $_ENV['DB_PREFIX']; //TODO: change in env/.env
  * Add default defines to handle internal URL smoothly
  */
 $http_scheme = 'http';
-if ( (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && (strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) == 'https')) || (isset($_SERVER['HTTP_USER_AGENT_HTTPS']) && $_SERVER['HTTP_USER_AGENT_HTTPS'] == 'ON')) {
+if ((isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && (strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) == 'https')) || (isset($_SERVER['HTTP_USER_AGENT_HTTPS']) && $_SERVER['HTTP_USER_AGENT_HTTPS'] == 'ON')) {
     $http_scheme        = 'https';
     $_SERVER['HTTPS']   = 'on';
     define( 'FORCE_SSL_LOGIN', true );
@@ -86,11 +86,11 @@ define('WP_SITEURL', SITE_URL . '/wp/');
 
 
 // Change placement of wp-content
-define( 'WP_CONTENT_DIR', dirname(__FILE__) . '/public/wp-content' );
+define('WP_CONTENT_DIR', dirname(__FILE__) . '/public/wp-content');
 define('WP_CONTENT_URL',  SITE_URL . '/wp-content');
 
-define( 'FS_CHMOD_FILE', 0644 );
-define( 'FS_CHMOD_DIR',  0755 );
+define('FS_CHMOD_FILE', 0644);
+define('FS_CHMOD_DIR',  0755);
 
 /**
  * A convenience function to output values of Variables and/or Arrays in a more readable manner
@@ -127,4 +127,3 @@ function ppd($array, $print = true) //print and die
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
     define('ABSPATH', dirname(__FILE__) . '/');
-
