@@ -15,6 +15,8 @@ if (file_exists( ENV_FOLDER . '/.env')) {
         'DB_HOST',
         'DB_PREFIX'
     ) )->notEmpty();
+} else {
+    die('there was an error finding the .env file');
 }
 
 //load helper ENV files to prevent repeating code
