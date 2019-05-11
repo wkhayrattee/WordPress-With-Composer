@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+### v1.0.0 (11th May 2019)
+
+* I have extracted & added all the changes I had on my live websites into this project to make it public. So bear with me with all the small commits.
+* I have tested this repo on a production server, all works fine
+* let's tag to 1.0.0 as it's production ready
+
+NOTE: I have been using this workflow on the LIVE for the last 3yrs, but I did not update this repo with my setup. I took time the last couple of days to update this repo.
+
 ### v0.4.0 (10th May 2019)
 * refactor the configs and php env files based on what I learned during the last 2-3yrs deploying wordpress apps
 * add usage of .env file inspired by Pantheon's composer file
