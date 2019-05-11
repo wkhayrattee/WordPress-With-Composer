@@ -67,7 +67,7 @@ define('NONCE_SALT',       $_ENV['NONCE_SALT']);
 define('DB_NAME',       $_ENV['DB_NAME']); //TODO: change in env/.env
 define('DB_USER',       $_ENV['DB_USER']); //TODO: change in env/.env
 define('DB_PASSWORD',   $_ENV['DB_PASSWORD']); //TODO: change in env/.env
-$table_prefix =         $_ENV['DB_PASSWORD']; //TODO: change in env/.env
+$table_prefix =         $_ENV['DB_PREFIX']; //TODO: change in env/.env
 
 /**
  * Whether or not we are dealing with HTTPS
