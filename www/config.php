@@ -20,9 +20,10 @@ if (file_exists( ENV_FOLDER . '/.env')) {
 //load helper ENV files to prevent repeating code
 switch (true) {
     case strstr($_SERVER['HTTP_HOST'], ".local"):
-    case strstr($_SERVER['HTTP_HOST'], "dev.")  :
     case strstr($_SERVER['HTTP_HOST'], ".dev")  :
     case strstr($_SERVER['HTTP_HOST'], "pre.")  :
+    case strstr($_SERVER['HTTP_HOST'], "dev.")  :
+    case strstr($_SERVER['HTTP_HOST'], "test.") :
     case strstr($_SERVER['HTTP_HOST'], "dev-")  :
     case strstr($_SERVER['HTTP_HOST'], "test-") :
         define('WP_ENV', 'dev');
