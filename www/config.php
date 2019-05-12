@@ -15,6 +15,7 @@ if (file_exists( ENV_FOLDER . '/.env')) {
             'DB_USER',
             'DB_PREFIX'
         ))->notEmpty();
+        $dotenv->required('APP_ENV')->allowedValues(['dev', 'local']);
     } catch (\Dotenv\Exception\ValidationException $error) {
         die($error->getMessage());
         //if we don't handle it, we end up with server error 500, which is extra steps to inspect server log
@@ -24,24 +25,8 @@ if (file_exists( ENV_FOLDER . '/.env')) {
 }
 
 //load helper ENV files to prevent repeating code
-switch (true) {
-    case strstr($_SERVER['HTTP_HOST'], ".local"):
-    case strstr($_SERVER['HTTP_HOST'], ".dev")  :
-    case strstr($_SERVER['HTTP_HOST'], "pre.")  :
-    case strstr($_SERVER['HTTP_HOST'], "dev.")  :
-    case strstr($_SERVER['HTTP_HOST'], "test.") :
-    case strstr($_SERVER['HTTP_HOST'], "dev-")  :
-    case strstr($_SERVER['HTTP_HOST'], "test-") :
-        define('WP_ENV', 'dev');
-        define('IS_DEBUG_ENABLED', true);
-        break;
-    default:
-        define('WP_ENV', 'prod');
-        define('IS_DEBUG_ENABLED', false);
-        break;
-}
-if (file_exists(ENV_FOLDER . WP_ENV . '.php')) {
-    require_once ENV_FOLDER . WP_ENV . '.php';
+if (file_exists(ENV_FOLDER . $_ENV['APP_ENV'] . '.php')) {
+    require_once ENV_FOLDER . $_ENV['APP_ENV'] . '.php';
 } else {
     die('there was an error finding an ENV file');
 }
