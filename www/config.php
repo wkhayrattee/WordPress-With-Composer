@@ -6,16 +6,16 @@ define('ENV_FOLDER',    __DIR__ . DIRECTORY_SEPARATOR . 'env' . DIRECTORY_SEPARA
 require __DIR__ . '/' . 'vendor/autoload.php';
 
 //load .env
-if (file_exists( ENV_FOLDER . '/.env')) {
+if (file_exists(ENV_FOLDER . '/.env')) {
     $dotenv = Dotenv\Dotenv::create(ENV_FOLDER);
     $dotenv->load();
     try {
-        $dotenv->required(array(
+        $dotenv->required([
             'DB_NAME',
             'DB_USER',
             'DB_PREFIX'
-        ))->notEmpty();
-        $dotenv->required('APP_ENV')->allowedValues(['dev', 'local']);
+        ])->notEmpty();
+        $dotenv->required('APP_ENV')->allowedValues(['dev', 'prod']);
     } catch (\Dotenv\Exception\ValidationException $error) {
         die($error->getMessage());
         //if we don't handle it, we end up with server error 500, which is extra steps to inspect server log
@@ -62,8 +62,8 @@ $http_scheme = 'http';
 if ((isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && (strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) == 'https')) || (isset($_SERVER['HTTP_USER_AGENT_HTTPS']) && $_SERVER['HTTP_USER_AGENT_HTTPS'] == 'ON')) {
     $http_scheme        = 'https';
     $_SERVER['HTTPS']   = 'on';
-    define( 'FORCE_SSL_LOGIN', true );
-    define( 'FORCE_SSL_ADMIN', true );
+    define('FORCE_SSL_LOGIN', true);
+    define('FORCE_SSL_ADMIN', true);
 }
 define('SITE_URL',   $http_scheme . '://' . $_SERVER['HTTP_HOST']); //TODO: If this does not work for you, put it manually
 define('WP_HOME',    SITE_URL);
@@ -72,7 +72,7 @@ define('WP_SITEURL', SITE_URL . '/wp/');
 
 // Change placement of wp-content
 define('WP_CONTENT_DIR', dirname(__FILE__) . '/public/wp-content');
-define('WP_CONTENT_URL',  SITE_URL . '/wp-content');
+define('WP_CONTENT_URL', SITE_URL . '/wp-content');
 
 define('FS_CHMOD_FILE', 0644);
 define('FS_CHMOD_DIR',  0755);
