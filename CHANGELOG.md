@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+### v1.0.1 (26th Jul 2019)
+
+* updated wordpress to v5.2.2 from v5.2.0
+* Updated plugins: akismet & query-monitor
+* Updated libraries: phpdotenv
+* Added new default theme: twentytwelve (based on two requests I received by email)
+
 ### v1.0.0 (11th May 2019)
 
 * I have extracted & added all the changes I had on my live websites into this project to make it public. So bear with me with all the small commits.
