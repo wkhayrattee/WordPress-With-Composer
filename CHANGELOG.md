@@ -1,5 +1,11 @@
 ## CHANGELOG
 
+### v1.0.2 (25th Oct 2019)
+
+* UPD:
+    - Wordpress core from v5.2.2 to v5.2.4
+    - plugin *query-monitor* form v3.3.7 to v3.4.0
+
 ### v1.0.1 (26th Jul 2019)
 
 * updated wordpress to v5.2.2 from v5.2.0
