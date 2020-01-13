@@ -1,49 +1,53 @@
-Using Wordpress With Composer & GIT workflow
-============================================
+Using WordPress With Composer & GIT workflow
+===============================================
 
-### How To Use
+## ## How To Use
 
-```php
-$ composer create-project sevenphp/wordpresswithcomposer your_main_folder --prefer-dist
+1) Use [Composer](https://getcomposer.org/) to setup the project:
+
+```
+$ composer create-project sevenphp/WordPresswithcomposer your_main_folder --no-dev --optimize-autoloader --prefer-dist -vv
 ```
 
-> NOTE: if on DEV environment, omit the **--prefer-dist**
+> NOTE: if on DEV environment, omit the **--no-dev --optimize-autoloader --prefer-dist**
+
+2) Setup your Config & .env files:
+
+Inside the folder **www/env**, do:
+
+- rename *.env.example* to *.env* and adjust the values as per your context
+- Depending on whether you are on DEV or PRODuction, rename *_dev-sample.php* to *dev.php* and adjust the values as per your context
+
+==> Then point your webServer to: path/to/your_main_folder/www/public
+
+3) Add any packages through Composer's **require** and enjoy building WordPress in a new flexible way, without using the dashboard - you control everything :)
 
 
-==> Then point your webserver to: path/to/your_main_folder/www/public
 
+## ## Intro
 
+This is not a "project" (as in a framework) per se, but more of an attempt to adjust the structure of WordPress for PHP developers to be able to add & use [Composer](https://getcomposer.org/) and [GIT](https://git-scm.com/) in their workflow.
 
-### Intro
+I'm a PHP developer and like to stay current. I had to embark into DEV-ing with WordPress. 
 
-This is not a "project", but more of an attempt to adjust the structure of Wordpress for PHP developers to be able to add & use [Composer](https://getcomposer.org/) and [GIT](https://git-scm.com/) in their workflow.
+In so-doing, I now feel differently positive about coding with WordPress as well, although I have been using WordPress since 2007 like crazy at a functional level for online purposes (like blogging..etc). 
 
-I'm a PHP developer and like to stay current. I had to embark into DEV-ing with Wordpress. In so-doing, I now feel differently positive about coding with Wordpress as well, although I have been using wordpress since 2007 like crazy at a functional level for online purposes (like blogging..etc). While the code is not 5 star, Wordpress in the philosophy is indeed amazing. **Think about it**, it's the _only project_ that has not (never?) made its user-base suffer from upgrading. It is always highly easy to upgrade. That, in itself is incredible! Anyway, so I wanted to be able to use GIT & a composer approach to my workflow and hence came up with this.
+While the code is not 5 star, WordPress in the philosophy is indeed amazing. 
 
-It's not (yet) the perfect workflow, so I would love to hear from you as well.
+**Think about it**, it's the _only_project_ that has not (never?) made its user-base suffer from upgrading. 
 
-NOTE: I know & have seen roots.io, but it goes way too far in their approach - modifying the structure of wordpress, it's too risky of an approach. It's kinda overdoing it. (No offence, but that's how I feel)
+It is always highly easy to upgrade. That, in itself is incredible! Anyway, so I wanted to be able to use GIT & a composer approach to my workflow and hence came up with this.
 
-### Objectives
-- Incorporate composer & git workflow into my daily wordpress dev
-- Make sure I do not divert too much from what Wordpress advises in [Giving WordPress Its Own Directory](https://codex.wordpress.org/Giving_WordPress_Its_Own_Directory) and [Hardening WordPress](https://codex.wordpress.org/Hardening_WordPress)
+It's not (yet) the perfect workflow, so I would love to hear from you as well. **Although, to reassure you, I have been using this in PRODUCTION for the last 4yrs and counting.**
 
-### CREDIT
+NOTE: 
 
-While the motivation comes from my eagerness to code that way, I have to mention and give credit to the amazing [“Rarst”](http://composer.rarst.net/).
-He is a driving force in the instilling the composer spirit with his longstanding initiatives. see [http://composer.rarst.net/]()http://composer.rarst.net/)
+I know & have seen *roots.io*, but it goes way too far in their approach - modifying the structure of WordPress, it's too risky of an approach. It's kinda overdoing it. (No offence, but that's how I feel)
 
+### ### Objectives
 
-REF: [http://composer.rarst.net/recipe/site-stack#composerjson](http://composer.rarst.net/recipe/site-stack#composerjson)
-
-
-### Detailed Info
-
-TODO: Blog posts
-
-### TODO
-
-- Move folder "uploads" as well in folder "public" and renaming it as "assets/uploads". Then symlink it.
+- Incorporate composer & git workflow into my daily WordPress dev
+- Make sure I do not divert too much from what WordPress advises in [Giving WordPress Its Own Directory](https://codex.WordPress.org/Giving_WordPress_Its_Own_Directory) and [Hardening WordPress](https://codex.WordPress.org/Hardening_WordPress)
 
 
 ### CHANGELOG
@@ -54,6 +58,6 @@ TODO: Blog posts
 
 - [Your Guide to Composer in WordPress](http://composer.rarst.net/recipe/site-stack#composerjson)
 - [https://wpackagist.org/](https://wpackagist.org/)
-- [https://packagist.org/packages/johnpbloch/wordpress](https://packagist.org/packages/johnpbloch/wordpress)
-- [Is moving wp-config outside the web root really beneficial?](http://wordpress.stackexchange.com/questions/58391/is-moving-wp-config-outside-the-web-root-really-beneficial/74972#74972)
+- [https://packagist.org/packages/johnpbloch/WordPress](https://packagist.org/packages/johnpbloch/WordPress)
+- [Is moving wp-config outside the web root really beneficial?](http://WordPress.stackexchange.com/questions/58391/is-moving-wp-config-outside-the-web-root-really-beneficial/74972#74972)
 - [pantheon-systems](https://github.com/pantheon-systems)

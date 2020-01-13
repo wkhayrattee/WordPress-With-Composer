@@ -1,14 +1,22 @@
 ## CHANGELOG
 
+### v1.1.0
+
+* UPD:
+    - WordPress core to v5.3.2
+    - vlucas/phpdotenv updated to a major version v4
+    - Adjust vlucas/phpdotenv *create()* method
+    - ReWrite README
+
 ### v1.0.2 (25th Oct 2019)
 
 * UPD:
-    - Wordpress core from v5.2.2 to v5.2.4
+    - WordPress core from v5.2.2 to v5.2.4
     - plugin *query-monitor* form v3.3.7 to v3.4.0
 
 ### v1.0.1 (26th Jul 2019)
 
-* updated wordpress to v5.2.2 from v5.2.0
+* updated WordPress to v5.2.2 from v5.2.0
 * Updated plugins: akismet & query-monitor
 * Updated libraries: phpdotenv
 * Added new default theme: twentytwelve (based on two requests I received by email)
@@ -22,7 +30,7 @@
 NOTE: I have been using this workflow on the LIVE for the last 3yrs, but I did not update this repo with my setup. I took time the last couple of days to update this repo.
 
 ### v0.4.0 (10th May 2019)
-* refactor the configs and php env files based on what I learned during the last 2-3yrs deploying wordpress apps
+* refactor the configs and php env files based on what I learned during the last 2-3yrs deploying WordPress apps
 * add usage of .env file inspired by Pantheon's composer file
 * Make enabling of https dynamic
 
@@ -30,7 +38,7 @@ NOTE: I have been using this workflow on the LIVE for the last 3yrs, but I did n
 
 MAJOR | Version change in some dependencies
 
-* change version of wordpress to ^4.7 in composer
+* change version of WordPress to ^4.7 in composer
 * change version rule for akismet in composer
 
 ### v0.3.0 (31 Oct 2016)
