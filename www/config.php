@@ -7,7 +7,7 @@ require __DIR__ . '/' . 'vendor/autoload.php';
 
 //load .env
 if (file_exists(ENV_FOLDER . '/.env')) {
-    $dotenv = Dotenv\Dotenv::create(ENV_FOLDER);
+    $dotenv = Dotenv\Dotenv::createImmutable(ENV_FOLDER);
     $dotenv->load();
     try {
         $dotenv->required([
