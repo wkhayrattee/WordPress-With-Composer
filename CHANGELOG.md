@@ -1,5 +1,38 @@
 ## CHANGELOG
 
+### v1.2.0
+
+* ADD:
+    - Add some useful plugins
+        - SEO-wise:
+            - google-sitemap-generator (simple best at it down the yrs and from our experience)
+            - wp-seopress (rock solid, away from the hype of yoast and all-in-one-seo)
+            - pretty-link (for all redirects & static files..etc)
+        - Security-wise (the combo below are best free & effective & complements each other)
+            - sucuri-scanner
+            - ninjafirewall
+        - CRON managers (since we turn off, these are good monitors)
+            - wp-cron-status-checker
+            - wp-crontrol
+        - BACKUP
+            - updraftplus (simply the best out there)
+        - optimisation plugin | (database + image + caching + compression)
+            - wp-optimize (see: https://getwpo.com/)
+
+* UPD:
+    - update WordPress core to v5.4.0
+    - update all dependencies to their respective latest versions
+    - Add `DISALLOW_FILE_MODS` to env files, as an extra step to prevent injections in file
+
+* CHANGE:
+    - Change in licensing from MIT to GPL-3.0
+    - Update LICENSE content to reflect these
+    
+* DELETE:
+    - Remove THEMES: (we choose to stick with TwentyTwenty as it is the latest and supports block editors)
+        - twentytwelve
+        - twentyfifteen
+
 ### v1.1.0
 
 * UPD:
