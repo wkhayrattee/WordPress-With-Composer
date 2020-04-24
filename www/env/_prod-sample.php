@@ -15,6 +15,13 @@ define('SAVEQUERIES',       false);
 define('DISABLE_WP_CRON',   true); //TODO: put false,unless you know what you are doing + will set your wp_cron externally
 
 define('WP_AUTO_UPDATE_CORE', 'minor'); // Enables core updates for minor releases, e.g: when security patch is out - apply it immediately
+
+/**
+ * good to have this, for e.g prevents from such attacks:
+ *      https://blog.sucuri.net/2020/04/analysis-of-a-wordpress-credit-card-swiper.html
+ */
+define('DISALLOW_FILE_MODS', true);
+
 /*
 // Enables all core updates, including minor and major:
 define( 'WP_AUTO_UPDATE_CORE', true );
@@ -25,8 +32,8 @@ define( 'WP_AUTO_UPDATE_CORE', 'minor' );
 */
 
 /* ref: https://codex.wordpress.org/Editing_wp-config.php */
-define('WP_MEMORY_LIMIT', '512M'); //TODO: use 256 if you are on small RAM
-define('WP_MAX_MEMORY_LIMIT', '1024M'); //TODO: use 512 if you are on small RAM
+define('WP_MEMORY_LIMIT',       '512M'); //TODO: use 256 if you are on small RAM
+define('WP_MAX_MEMORY_LIMIT',   '1024M'); //TODO: use 512 if you are on small RAM
 
 define('DB_CHARSET',    'utf8mb4'); //TODO: change for your scenario if needed
 define('DB_COLLATE',    'utf8mb4_unicode_ci'); //TODO: change for your scenario if needed
