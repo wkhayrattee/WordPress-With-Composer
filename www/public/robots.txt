@@ -1,0 +1,67 @@
+User-agent:  *
+# disallow all files in these directories
+Disallow: /cgi-bin/
+Disallow: /z/j/
+Disallow: /z/c/
+Disallow: /stats/
+Disallow: /dh_
+Disallow: /tag/
+Disallow: /contact
+Disallow: /phpmanual/
+
+User-agent: Googlebot
+# disallow all files ending with these extensions
+Disallow: /*.php$
+Disallow: /*.js$
+Disallow: /*.inc$
+Disallow: /*.css$
+Disallow: /*.gz$
+Disallow: /*.wmv$
+Disallow: /*.cgi$
+Disallow: /*.xhtml$
+
+# disallow all files with ? in url
+Disallow: /*?*
+
+# disable duggmirror
+User-agent: duggmirror
+Disallow: /
+
+# allow google image bot to search all images
+User-agent: Googlebot-Image
+Disallow:
+Allow: /*
+
+# allow adsense bot on entire site
+User-agent: Mediapartners-Google*
+Disallow:
+Allow: /*
+
+User-agent: Yandex
+Disallow: /
+
+User-agent: *
+Allow: /wp-content/uploads/
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/updraft
+Disallow: /wp-content/upgrade
+Disallow: /wp-content/uploads/js_composer
+Disallow: /wp-content/uploads/revslider
+Disallow: /wp-content/uploads/wc-logs
+Disallow: /wp-content/uploads/woocommerce_uploads
+Disallow: /wp-content/languages
+Disallow: /wp/wp-admin
+Disallow: /wp/wp-login.php
+Disallow: /wp/wp-content/updraft
+Disallow: /wp/wp-content/upgrade
+Disallow: /wp/wp-content/uploads/js_composer
+Disallow: /wp/wp-content/uploads/revslider
+Disallow: /wp/wp-content/uploads/wc-logs
+Disallow: /wp/wp-content/uploads/woocommerce_uploads
+Disallow: /wp/wp-content/languages
+Disallow: /readme.html
+Disallow: /refer/
+
+Sitemap: https://YOURDOMAIN/sitemap.xml
