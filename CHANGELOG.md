@@ -1,5 +1,24 @@
 ## CHANGELOG
 
+### v1.2.1
+
+* ADD:
+    - Add more useful plugins
+        - Optimisation
+            - fast-velocity-minify: I've been trying out several plugins, this one is effective
+            - imagekit - for image optimisation & serving images through CDN. Very effective & you get 20GB per month which is great for normal bloggers.
+
+* UPD:
+    - update WordPress core to v5.4.1
+    - update all dependencies to their respective latest versions
+    
+* DELETE:
+    - remove plugins:
+        - sucuri-scanner: 
+            - while using it on 3 prod servers, I notice too many constant bot from this plugin. It keeps hitting the server constantly, apparently for scanning. But this can be a resource hog. I'll do without it.
+            - besides, I do not see anything amazing which is not covered by the current ninjafirewall in our list
+            - too commercial VS genuine benefit
+
 ### v1.2.0
 
 * ADD:
