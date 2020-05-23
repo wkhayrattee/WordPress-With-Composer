@@ -1,6 +1,14 @@
 Using WordPress With Composer & GIT workflow
 ===============================================
 
+This project is **production** ready.
+
+If that matters, I have deployed several WooCommerce-based shops using this setup for the last 4yrs, as well as numourous WordPress blogs. 
+
+I obviously also use it on the high production shops/websites for my professional work-place. So far, no issue or constraints. It makes working and developing in WordPress a joy. It makes automated deploy very neat { helps achieve part of the goals for [12-factor principle](https://12factor.net/) }.
+
+Now go rock your WordPress development workflow with confidence!
+
 ## ## How To Use
 
 1) Use [Composer](https://getcomposer.org/) to setup the project:
@@ -38,7 +46,8 @@ While the code is not 5 star, WordPress in the philosophy is indeed amazing.
 
 It is always highly easy to upgrade. That, in itself is incredible! Anyway, so I wanted to be able to use GIT & a composer approach to my workflow and hence came up with this.
 
-It's not (yet) the perfect workflow, so I would love to hear from you as well. **Although, to reassure you, I have been using this in PRODUCTION for the last 4yrs and counting.**
+### ### Your Feedback
+If you use this project, I would love to hear from you as well. I may feature your project in here to showcase. So get in touch.
 
 NOTE: 
 
