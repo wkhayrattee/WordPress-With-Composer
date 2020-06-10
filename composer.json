@@ -16,7 +16,7 @@
     "optimize-autoloader": true,
     "sort-packages": true,
     "platform": {
-      "php": "7.3.13"
+      "php": "7.4"
     },
     "preferred-install": {
       "sevenphp/*": "source",
@@ -35,21 +35,23 @@
     }
   },
   "require": {
-    "vlucas/phpdotenv": "4.1.6",
+    "vlucas/phpdotenv": "5.0.0",
     "composer/installers": "1.9.0",
     "johnpbloch/wordpress": "5.4.1",
     "wpackagist-theme/twentytwenty": "1.3",
-    "wpackagist-plugin/akismet": "4.1.5",
-    "wpackagist-plugin/updraftplus": "1.16.24",
-    "wpackagist-plugin/wp-optimize": "3.0.19",
+    "wpackagist-plugin/akismet": "4.1.6",
+    "wpackagist-plugin/updraftplus": "1.16.25",
+    "wpackagist-plugin/wp-optimize": "3.1.2",
     "wpackagist-plugin/google-sitemap-generator": "4.1.0",
-    "wpackagist-plugin/wp-seopress": "3.8.6",
+    "wpackagist-plugin/wp-seopress": "3.8.7",
     "wpackagist-plugin/ninjafirewall": "4.2.1",
     "wpackagist-plugin/pretty-link": "3.1.1",
     "wpackagist-plugin/wp-cron-status-checker": "1.2.1",
-    "wpackagist-plugin/wp-crontrol": "1.8.3",
+    "wpackagist-plugin/wp-crontrol": "1.8.5",
     "wpackagist-plugin/fast-velocity-minify": "2.8.8",
-    "wpackagist-plugin/imagekit": "3.0.5"
+    "wpackagist-plugin/imagekit": "3.0.5",
+    "wpackagist-plugin/two-factor": "0.6.0",
+    "wpackagist-plugin/host-analyticsjs-local": "3.5.3"
   },
   "require-dev": {
     "wpackagist-plugin/query-monitor": "3.6.0",
