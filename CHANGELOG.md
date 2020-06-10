@@ -1,6 +1,33 @@
 ## CHANGELOG
 
-### v1.2.1
+### v1.3.0 (June 10, 2020)
+
+* CHANGE:
+    - Bump PHP from 7.3.x to now 7.4
+        - I've been testing this project with PHP7.4.6 since the last 2 months, I am happy to say I have not encounter any issue. I am even using WooCommerce on top of it on several production servers, no issue thus far.
+
+* ADD:
+    - Add more useful plugins
+        - two-factor: best 2FA plugin so far, providing support for physical keys like Yubico.
+        - host-analyticsjs-local: Read more:
+            - https://daan.dev/wordpress/caos-local-analytics-cookie-notice-gdpr/
+            - https://daan.dev/wordpress/analytics-gdpr-caos/
+
+* UPD:
+    - updated dependencies to latest versions:
+        - vlucas/phpdotenv
+        - akismet
+        - updraftplus
+        - wp-optimize
+        - wp-seopress
+        - wp-crontrol
+        - imagekit
+
+* SPECIAL NOTE:
+    - Library `vlucas/phpdotenv` has been upgraded to major version 5. It does not create any issue for us per se. The main thing is they raised min version for PHP to PHP 7.1+. We are already supporting the higher PHP7.4x. 
+        - Please see [their changelog](https://github.com/vlucas/phpdotenv/blob/master/UPGRADING.md) for changes.
+
+### v1.2.1 (May 24, 2020)
 
 * ADD:
     - Add more useful plugins
