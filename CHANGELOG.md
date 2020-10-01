@@ -1,5 +1,24 @@
 ## CHANGELOG
 
+### v1.4.0 (Oct 1, 2020)
+* UPD:
+    - WordPress core: from v5.4.x to now v5.5.x
+    - Dependencies:
+        - vlucas/phpdotenv to v5.2.0
+    - WP Plugins:
+        - updraftplus
+        - wp-optimize
+        - google-sitemap-generator
+        - wp-seopress from v3.x to v4.x
+        - ninjafirewall
+        - fast-velocity-minify
+        - imagekit from v3.x to v4.x
+        - two-factor
+        - host-analyticsjs-local
+        - (dev) query-monitor
+    - WP Themes:
+        - twentytwenty from v1.3 to v1.5
+
 ### v1.3.0 (June 10, 2020)
 
 * CHANGE:
