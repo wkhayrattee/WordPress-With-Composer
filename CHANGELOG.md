@@ -1,8 +1,18 @@
 ## CHANGELOG
 
+### v1.4.1 (Nov 2, 2020)
+* UPD:
+    - WordPress core: from v5.5.1 to v5.5.3
+    - WP Plugins:
+        - akismet
+        - updraftplus
+        - wp-seopress
+        - ninjafirewall
+        - pretty-link
+
 ### v1.4.0 (Oct 1, 2020)
 * UPD:
-    - WordPress core: from v5.4.x to now v5.5.x
+    - WordPress core: from v5.4.x to v5.5.x
     - Dependencies:
         - vlucas/phpdotenv to v5.2.0
     - WP Plugins:
