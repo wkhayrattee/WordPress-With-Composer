@@ -12,7 +12,7 @@
   ],
   "type": "project",
   "config": {
-    "vendor-dir": "www/vendor",
+    "vendor-dir": "vendor",
     "optimize-autoloader": true,
     "sort-packages": true,
     "platform": {
@@ -24,12 +24,12 @@
     }
   },
   "extra": {
-    "wordpress-install-dir": "www/public/wp",
+    "wordpress-install-dir": "public/wp",
     "installer-paths": {
-      "www/public/wp-content/plugins/{$name}/": [
+      "public/wp-content/plugins/{$name}/": [
         "type:wordpress-plugin"
       ],
-      "www/public/wp-content/themes/{$name}/": [
+      "public/wp-content/themes/{$name}/": [
         "type:wordpress-theme"
       ]
     }
