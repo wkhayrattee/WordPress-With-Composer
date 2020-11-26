@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+### v2.0.0 (Nov 26, 2020)
+
+* CHANGE:
+    - Refactor folder structure
+        - Down the years, we see there's no need to have an extra folder layer with the `www` folder, so remove it
+        - adjust composer commands accordingly
+        - adjust .gitignore
+
 ### v1.5.0 (Nov 26, 2020)
 
 * ADD:
