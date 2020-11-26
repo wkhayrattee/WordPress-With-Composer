@@ -1,5 +1,16 @@
 ## CHANGELOG
 
+### v1.4.2 (Nov 26, 2020)
+* ADD:
+    - Added the debug-bar plugin for devs
+        - sometimes it is more easy to use debug-bar, specially if you need to track object-cache
+
+* UPD:
+    - WP Plugins:
+        - updraftplus
+        - wp-seopress
+        - query-monitor
+
 ### v1.4.1 (Nov 2, 2020)
 * UPD:
     - WordPress core: from v5.5.1 to v5.5.3

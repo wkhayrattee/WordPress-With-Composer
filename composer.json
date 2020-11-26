@@ -40,10 +40,10 @@
     "johnpbloch/wordpress": "5.5.3",
     "wpackagist-theme/twentytwenty": "1.5",
     "wpackagist-plugin/akismet": "4.1.7",
-    "wpackagist-plugin/updraftplus": "1.16.34",
+    "wpackagist-plugin/updraftplus": "1.16.40",
     "wpackagist-plugin/wp-optimize": "3.1.4",
     "wpackagist-plugin/google-sitemap-generator": "4.1.1",
-    "wpackagist-plugin/wp-seopress": "4.1.2",
+    "wpackagist-plugin/wp-seopress": "4.1.6",
     "wpackagist-plugin/ninjafirewall": "4.2.6",
     "wpackagist-plugin/pretty-link": "3.2.1",
     "wpackagist-plugin/wp-cron-status-checker": "1.2.1",
@@ -54,7 +54,8 @@
     "wpackagist-plugin/host-analyticsjs-local": "3.7.7"
   },
   "require-dev": {
-    "wpackagist-plugin/query-monitor": "3.6.4",
+    "wpackagist-plugin/query-monitor": "3.6.5",
+    "wpackagist-plugin/debug-bar": "1.1.2",
     "roave/security-advisories": "dev-master",
     "dealerdirect/phpcodesniffer-composer-installer": "*",
     "wp-coding-standards/wpcs": "*"
