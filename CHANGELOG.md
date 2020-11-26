@@ -1,5 +1,12 @@
 ## CHANGELOG
 
+### v1.5.0 (Nov 26, 2020)
+
+* ADD:
+    - New Feature: Maintenance mode
+        - you can now just set the constant IN_MAINTENANCE via the .env file to toggle your WordPress in maintenance mode
+        - Tweak the simple HTML in wp-content/maintenance.php to change the default message & contact email
+
 ### v1.4.2 (Nov 26, 2020)
 * ADD:
     - Added the debug-bar plugin for devs

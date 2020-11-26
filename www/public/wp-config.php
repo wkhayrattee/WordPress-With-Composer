@@ -12,3 +12,14 @@ require_once(dirname(__DIR__) . '/' . 'config.php');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+/**
+ * Handle MAINTENANCE Mode
+ */
+if( defined('IN_MAINTENANCE') && (is_bool(IN_MAINTENANCE) == true) ) {
+    header('Content-Type: text/html; charset=utf-8');
+    if ( file_exists(WP_CONTENT_DIR . '/maintenance.php')) {
+        require_once(WP_CONTENT_DIR . '/maintenance.php');
+    }
+    die();
+}

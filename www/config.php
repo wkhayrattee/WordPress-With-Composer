@@ -31,6 +31,9 @@ if (file_exists(ENV_FOLDER . $_ENV['APP_ENV'] . '.php')) {
     die('there was an error finding an ENV file');
 }
 
+/** IS MAINTENANCE MODE */
+define('IN_MAINTENANCE', $_ENV['IN_MAINTENANCE']);
+
 /**
  * Authentication Unique Keys and Salts.
  *
