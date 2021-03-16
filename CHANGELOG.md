@@ -1,5 +1,26 @@
 ## CHANGELOG
 
+### v2.1.0 (March 16, 2021)
+
+* UPD:
+    - WordPress core: from v5.5.3 to v5.7.0 (long overdue)
+    - Dependencies:
+        - vlucas/phpdotenv
+        - composer/installers from v1.9 to v1.10.0 (I guess this is following the major release of Composer v2)
+    - WP Plugins:
+        - akismet
+        - updraftplus
+        - wp-optimize
+        - wp-seopress
+        - ninjafirewall
+        - wp-cron-status-checker
+        - wp-crontrol
+        - fast-velocity-minify
+        - imagekit
+        - (DEV) query-monitor
+    - WP THEME
+        - twentytwenty
+
 ### v2.0.0 (Nov 26, 2020)
 
 * CHANGE:
