@@ -1,5 +1,6 @@
 .idea
 .DS_Store
+.php_cs.cache
 vendor
 composer.lock
 public/wp-content/plugins
