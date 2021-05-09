@@ -1,5 +1,40 @@
 ## CHANGELOG
 
+### v2.2.0 (March 16, 2021)
+
+* SPECIAL
+    - ADDED:
+        - support for mu-plugin
+        - support for dropin
+    - Code standard
+        - now on we'll use php-cs-fixer to helpe with clean-code indentations
+
+* REMOVED:
+    - WP-PLUGINS:
+        - wp-control plugin
+            - I was deeply involved in coding a queuing system using the the inbuilt WordPress scheduler. I had to use a reliable cron plugin to visually see progression of my scheduled tasks. That's where I found the plugin `wp-control` veyr very unreliable
+    
+* ADDED:
+    - WP-PLUGINS:
+        - advanced-cron-manager
+            - as mentioned above, this plugin turned out to be much more reliable for what it claims to do
+    
+* UPDATED:
+    - WordPress Core:
+        - from v5.7.0 to v5.7.1
+  - Dependencies:
+      - vlucas/phpdotenv
+      - composer/installers from v1.10.0 to v1.11.0
+    - WP-PLUGINS:
+        - updraftplus
+        - wp-optimize
+        - wp-seopress
+        - ninjafirewall
+        - pretty-link
+        - fast-velocity-minify
+        - host-analyticsjs-local
+
+
 ### v2.1.0 (March 16, 2021)
 
 * UPD:
