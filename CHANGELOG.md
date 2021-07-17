@@ -1,5 +1,21 @@
 ## CHANGELOG
 
+### v2.2.1 (Jul 17, 2021)
+
+* UPDATED:
+    - WordPress Core:
+        - from v5.7.1 to v5.7.2
+    - Dependencies:
+        - WP-PLUGINS:
+            - akismet
+            - updraftplus
+            - wp-optimize
+            - wp-seopress
+            - ninjafirewall
+            - fast-velocity-minify
+            - host-analyticsjs-local
+            - query-monitor
+
 ### v2.2.0 (March 16, 2021)
 
 * SPECIAL
