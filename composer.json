@@ -1,16 +1,17 @@
 {
-  "name": "sevenphp/wordpresswithcomposer",
-  "description": "This is a base setup for using wordpress with composer & git workflow. See the readme of usage.",
-  "keywords": ["wordpress", "use composer with wordpress", "wordpress composer", "composer wordpress"],
+  "name": "wkhayrattee/wordpress-with-composer",
+  "description": "This is a base setup for using WordPress with composer & git workflow. See the readme of usage.",
+  "keywords": ["wordpress", "use composer with wordpress", "wordpress composer", "composer wordpress", "wordpress with composer"],
   "license": "GPL-3.0",
   "authors": [
     {
       "name": "Wasseem Khayrattee",
-      "email": "git@7php.com",
-      "homepage": "https://7php.com/"
+      "email": "hey@wk.contact",
+      "homepage": "https://wk.contact/"
     }
   ],
   "type": "project",
+  "minimum-stability": "dev",
   "config": {
     "vendor-dir": "vendor",
     "optimize-autoloader": true,
@@ -19,7 +20,7 @@
       "php": "7.4"
     },
     "preferred-install": {
-      "sevenphp/*": "source",
+      "wkhayrattee/*": "source",
       "*": "dist"
     }
   },
