@@ -18,7 +18,7 @@ if (file_exists(ENV_FOLDER . '/.env')) {
         ])->notEmpty();
         $dotenv->required('APP_ENV')->allowedValues(['local', 'dev', 'stag', 'prod']);
         $dotenv->required('ENABLE_HTTPS')->allowedValues(['ON', 'OFF']);
-        $dotenv->required('IN_MAINTENANCE')->allowedValues([true, false]);
+        $dotenv->required('IN_MAINTENANCE')->allowedValues(['ON', 'OFF']);
     } catch (\Dotenv\Exception\ValidationException $error) {
         die($error->getMessage());
         //if we don't handle it, we end up with server error 500, which is extra steps to inspect server log
