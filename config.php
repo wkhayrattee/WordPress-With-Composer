@@ -16,7 +16,9 @@ if (file_exists(ENV_FOLDER . '/.env')) {
             'DB_USER',
             'DB_PREFIX',
         ])->notEmpty();
-        $dotenv->required('APP_ENV')->allowedValues(['dev', 'prod']);
+        $dotenv->required('APP_ENV')->allowedValues(['local', 'dev', 'stag', 'prod']);
+        $dotenv->required('ENABLE_HTTPS')->allowedValues(['ON', 'OFF']);
+        $dotenv->required('IN_MAINTENANCE')->allowedValues([true, false]);
     } catch (\Dotenv\Exception\ValidationException $error) {
         die($error->getMessage());
         //if we don't handle it, we end up with server error 500, which is extra steps to inspect server log
@@ -34,6 +36,35 @@ if (file_exists(ENV_FOLDER . $_ENV['APP_ENV'] . '.php')) {
 
 /** IS MAINTENANCE MODE */
 define('IN_MAINTENANCE', $_ENV['IN_MAINTENANCE']);
+
+/**
+ * Set the WordPress global environment via constant WP_ENVIRONMENT_TYPE
+ * Allowed values: 'local', 'development', 'staging', 'production'
+ *
+ * reference:
+ *  - https://make.wordpress.org/core/2020/07/24/new-wp_get_environment_type-function-in-wordpress-5-5/
+ *
+ * This environment is fetch via the inbuilt WP function:
+ *      - wp_get_environment_type()
+ *
+ * This function is found in: wp-includes/load.php
+ */
+switch ($_ENV['APP_ENV']) {
+    case 'prod':
+        define('WP_ENVIRONMENT_TYPE', 'production');
+        break;
+    case 'stag':
+        define('WP_ENVIRONMENT_TYPE', 'staging');
+        break;
+    case 'dev':
+        define('WP_ENVIRONMENT_TYPE', 'development');
+        break;
+    case 'local':
+        define('WP_ENVIRONMENT_TYPE', 'local');
+        break;
+    default:
+        define('WP_ENVIRONMENT_TYPE', 'production');
+}
 
 /**
  * Authentication Unique Keys and Salts.
@@ -59,11 +90,10 @@ define('DB_PASSWORD', $_ENV['DB_PASSWORD']); //TODO: change in env/.env
 $table_prefix = $_ENV['DB_PREFIX']; //TODO: change in env/.env
 
 /**
- * Whether or not we are dealing with HTTPS
- * Add default defines to handle internal URL smoothly
+ * HTTPS Status | Enable via .env file, set constant ENABLE_HTTPS
  */
 $http_scheme = 'http';
-if ((isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && (mb_strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) == 'https')) || (isset($_SERVER['HTTP_USER_AGENT_HTTPS']) && $_SERVER['HTTP_USER_AGENT_HTTPS'] == 'ON')) {
+if ((isset($_ENV['ENABLE_HTTPS']) && ($_ENV['ENABLE_HTTPS'] == 'ON'))) {
     $http_scheme = 'https';
     $_SERVER['HTTPS'] = 'on';
     define('FORCE_SSL_LOGIN', true);
