@@ -7,8 +7,8 @@ define('ENV_FOLDER', __DIR__ . DIRECTORY_SEPARATOR . 'env' . DIRECTORY_SEPARATOR
 require __DIR__ . '/' . 'vendor/autoload.php';
 
 //load .env
-if (file_exists(ENV_FOLDER . '/.env')) {
-    $dotenv = Dotenv\Dotenv::createImmutable(ENV_FOLDER);
+if (file_exists(ENV_FOLDER . '.env')) {
+    $dotenv = \Dotenv\Dotenv::createImmutable(ENV_FOLDER);
     $dotenv->load();
     try {
         $dotenv->required([
@@ -24,14 +24,14 @@ if (file_exists(ENV_FOLDER . '/.env')) {
         //if we don't handle it, we end up with server error 500, which is extra steps to inspect server log
     }
 } else {
-    die('there was an error finding the .env file');
+    die('there was an error finding the .env file at /path/to/env/.env');
 }
 
 //load helper ENV files to prevent repeating code
 if (file_exists(ENV_FOLDER . $_ENV['APP_ENV'] . '.php')) {
     require_once ENV_FOLDER . $_ENV['APP_ENV'] . '.php';
 } else {
-    die('there was an error finding an ENV file');
+    die('there was an error finding a php ENV file at at /path/to/env/{env}.php');
 }
 
 /** IS MAINTENANCE MODE */
