@@ -19,7 +19,7 @@
     <h1>{ Scheduled maintenace }</h1>
     <h3>We&rsquo;ll be back soon!</h3>
     <div>
-        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="mailto:#">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
+        <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to, you can always <a href="mailto:<?php echo trim($_ENV['MAINTENANCE_MAILTO_EMAIL'])?>">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
         <p>&mdash; The Admin Team</p>
     </div>
 </article>
