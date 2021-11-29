@@ -1,5 +1,34 @@
 ## CHANGELOG
 
+### v3.0.0 (Nov 29, 2021)
+
+* BREAKING:
+  - updated composer installers to v2.x from v1.x
+  - update WordPress to v5.8.x from v5.7.x
+
+* UPDATED:
+  * Composer installers
+    * from v1.12.0 to v2.0.1
+  * WordPress Core:
+    * from v5.7.x to v5.8.2
+  * Dependencies:
+      - vlucas/phpdotenv
+      - composer/installers
+      - akismet
+      - updraftplus
+      - wp-optimize
+      - wp-seopress
+      - ninjafirewall
+      - pretty-link
+      - imagekit
+      - two-factor
+      - fast-velocity-minify
+      - host-analyticsjs-local
+      - query-monitor
+
+* ADDED:
+  * b2-sync plugin
+
 ### v2.2.1 (Jul 17, 2021)
 
 * UPDATED:
