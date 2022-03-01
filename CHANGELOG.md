@@ -1,5 +1,25 @@
 ## CHANGELOG
 
+### v3.1.0 (March 1, 2022)
+
+* UPDATED:
+    * WordPress Core:
+        * from v5.8.x to v5.9.1
+    * Dependencies:
+        - twentytwenty (theme)
+        - vlucas/phpdotenv
+        - akismet
+        - updraftplus
+        - wp-optimize
+        - wp-seopress
+        - ninjafirewall
+        - advanced-cron-manager
+        - fast-velocity-minify
+        - host-analyticsjs-local
+        - query-monitor
+        - b2-sync
+
+
 ### v3.0.0 (Nov 29, 2021)
 
 * BREAKING:
