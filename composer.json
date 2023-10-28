@@ -39,15 +39,15 @@
     }
   },
   "require": {
-    "vlucas/phpdotenv": "5.4.1",
-    "composer/installers": "2.0.1",
-    "johnpbloch/wordpress": "5.9.1",
-    "wpackagist-theme/twentytwenty": "1.9",
-    "wpackagist-plugin/akismet": "4.2.2"
+    "vlucas/phpdotenv": "5.5.0",
+    "composer/installers": "2.2.0",
+    "johnpbloch/wordpress": "6.3.2",
+    "wpackagist-theme/twentytwentythree": "1.2",
+    "wpackagist-plugin/akismet": "5.3"
   },
   "require-dev": {
-    "wpackagist-plugin/query-monitor": "3.8.2",
-    "wpackagist-plugin/debug-bar": "1.1.2",
+    "wpackagist-plugin/query-monitor": "3.14.1",
+    "wpackagist-plugin/debug-bar": "1.1.4",
     "roave/security-advisories": "dev-master",
     "dealerdirect/phpcodesniffer-composer-installer": "*",
     "wp-coding-standards/wpcs": "*"

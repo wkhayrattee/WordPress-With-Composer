@@ -1,5 +1,23 @@
 ## CHANGELOG
 
+### v4.0.0 (Oct 28, 2023)
+
+* UPDATED:
+  * WordPress Core:
+    * from v5.9.x to v6.3.2
+  * Dependencies:
+    * theme: twentytwentythree
+    * plugin: akismet
+
+
+* UPDATED:
+  - updated `vlucas/phpdotenv` to run on PHP 8.0+
+  - updated `composer/installers` to run on PHP 8.0+
+
+* BREAKING:
+  * Removed the platform block - taking away the forced PHP 7.4 version constraint from the composer
+  * Removed all optional theme and plugins - we not stick with one default theme (twentytwentythree) and one default plugin (Akismet). It is now your choice to include whichever plugins or themes you need. We try to make this bundle as generic and less opinionated as possible.
+
 ### v3.1.0 (March 1, 2022)
 
 * UPDATED:
