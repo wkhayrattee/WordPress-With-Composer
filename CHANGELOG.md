@@ -15,8 +15,8 @@
   - updated `composer/installers` to run on PHP 8.0+
 
 * BREAKING:
-  * Removed the platform block - taking away the forced PHP 7.4 version constraint from the composer
-  * Removed all optional theme and plugins - we not stick with one default theme (twentytwentythree) and one default plugin (Akismet). It is now your choice to include whichever plugins or themes you need. We try to make this bundle as generic and less opinionated as possible.
+    * Removed the platform block, eliminating the enforced PHP 7.4 version constraint from the composer.
+    * Removed all optional themes and plugins. We now default to a single theme (twentytwentythree) and one default plugin (Akismet). You're free to include any additional plugins or themes as needed. The aim is to make this bundle as generic and non-opinionated as possible.
 
 ### v3.1.0 (March 1, 2022)
 
