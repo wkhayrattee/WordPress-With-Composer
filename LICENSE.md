@@ -1,7 +1,7 @@
 # GPL-3.0 Licensing
 
-    WordPressWithComposer - a base setup for using wordpress with composer & git workflow
-    Copyright (C) 2019-2020  Khayrattee Wasseem <w@7php.com>
+    WordPress-With-Composer - a base setup for using wordpress with composer & git workflow
+    Copyright (C) 2019-2023  Wasseem Khayrattee <hey@wk.contact>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
