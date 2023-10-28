@@ -16,9 +16,6 @@
     "vendor-dir": "vendor",
     "optimize-autoloader": true,
     "sort-packages": true,
-    "platform": {
-      "php": "7.4"
-    },
     "preferred-install": {
       "wkhayrattee/*": "source",
       "*": "dist"
