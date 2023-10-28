@@ -1,6 +1,6 @@
 ## CHANGELOG
 
-### v4.0.0 (Oct 28, 2023)
+### v4.0.1 (Oct 28, 2023)
 
 * UPDATED:
   * WordPress Core:
@@ -17,6 +17,9 @@
 * BREAKING:
     * Removed the platform block, eliminating the enforced PHP 7.4 version constraint from the composer.
     * Removed all optional themes and plugins. We now default to a single theme (twentytwentythree) and one default plugin (Akismet). You're free to include any additional plugins or themes as needed. The aim is to make this bundle as generic and non-opinionated as possible.
+
+* ADDED:
+  * Add "allow-plugins" to composer to trust necessary installers. This change ensures "johnpbloch/wordpress-core-installer" and "composer/installers" are trusted automatically, preventing prompts during `composer install`.
 
 ### v3.1.0 (March 1, 2022)
 
