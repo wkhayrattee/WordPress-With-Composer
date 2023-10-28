@@ -19,6 +19,10 @@
     "preferred-install": {
       "wkhayrattee/*": "source",
       "*": "dist"
+    },
+    "allow-plugins": {
+      "johnpbloch/wordpress-core-installer": true,
+      "composer/installers": true
     }
   },
   "extra": {
